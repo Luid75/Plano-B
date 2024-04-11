@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luid Store</title>
+    <link rel="stylesheet" href="./Home.css">
+    <link rel="stylesheet" href="./slider-style.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <style>
+        * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header */
+.header-inner-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.navbar {
+    background-color: #2c2c2c;
+    position: sticky;
+    top: 0;
+    box-shadow: 10px 0px 10px #2c2c2c;
+    z-index: 99;
+}
+
+.navbar > .header-inner-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo a{
+    margin-right: 3.5rem;
+    font-size: 2rem;
+    color: rgb(151, 42, 240);
+    text-decoration: none;
+}
+
+.logo span {
+    color: #fff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin-right: 6rem;
+}
+
+.nav-icon-container{
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon-container img {
+    width: 30px;
+    cursor: pointer;
+}
+
+.nav-icon-container img:first-child {
+    margin-right: 2rem;
+}
+
+nav ul li a{
+    color: #fff;
+    margin-right: 3rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+nav ul li:hover {
+    transform: translate(-5px);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar.show-menu nav {
+    display: flex;
+}
+
+.menu-button {
+    display: none;
+}
+
+header {
+    background-image: radial-gradient(#fff, #c7c7c7);
+}
+
+.header-bottom-side {
+    display: flex;
+    align-items: center;
+}
+
+.header-bottom-side-left {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.header-bottom-side-left h2 {
+    font-size: 3.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.header-bottom-side-left p {
+    line-height: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.header-bottom-side-left button {
+    background-color: rgb(120, 14, 207);
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem 3.8rem;
+    border-radius: 9999px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s;
+
+}
+
+.header-bottom-side-left button:hover {
+    background-color: rgb(77, 12, 131);
+
+}
+
+.header-bottom-side-right {
+    flex: 1;
+}
+
+.header-bottom-side-right img {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+/* Media Queries */
+@media (max-width: 800px) {
+    .menu-button {
+        display: block;
+        margin-left: auto; /* Alinha o botão ao centro */
+        margin-right: auto; /* Alinha o botão ao centro */
+    }
+
+    nav {
+        background-color: #2c2c2c;
+        width: 100%;
+        display: none;
+        flex-grow: 1; /* Para ocupar o espaço disponível */
+        text-align: center; /* Para alinhar os itens ao centro */
+        
+    }
+
+    .header-bottom-side {
+        flex-direction: column;
+    }
+
+    .show-menu nav {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 0.8rem;
+    }
+}
+
+/* Header */
+
+/* Main Content */
+main{
+    background-color: #ebebeb;
+}
+
+.gray-background{
+    background-color: #2c2c2c;
+}
+
+.page-inner-content{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.cols{
+    display: grid;
+    justify-content: space-evenly;
+    padding: 4rem 1rem;
+}
+
+.cols-3{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.img-cols{
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0 1px rgb(48, 0, 87);;
+}
+
+.cols-3 img{
+    max-width: 100%;
+}
+
+.cols-4 img{
+    max-width: 100%;
+}
+
+
+.cols-4{
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.cols>*{
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cols>*:hover{
+    transform: translateY(-10px);
+}
+
+.section-title{
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 1.8rem;
+}
+
+.subtitle-underline{
+    width: 100px;
+    height: 5px;
+    background-color: rgb(120, 14, 207);
+    border-radius: 9999px;
+    margin: 8px auto 0 auto;
+}
+
+.product{
+    color: #2c2c2c;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name{
+    font-weight: 600;
+    margin-top: 0.4rem;
+}
+
+.rate{
+    color: #0084ff;
+    font-size: 1.3rem;
+}
+
+.product-price span{
+    font-weight: 600;
+}
+
+.exclusive-container{
+    color: #fff;
+    flex-direction: row-reverse;
+    padding: 5rem 1rem;
+}
+
+.exclusive-container img{
+    max-width: 500px;
+}
+
+/* Media queries */
+
+@media (max-width: 800px){
+    .section-title{
+        font-size: 1rem;
+    }
+
+    .cols-3{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .cols-4{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-name, .product-price, .rice{
+        max-height: 1rem;
+        overflow: hidden;
+        font-size: 0.8rem;
+    }
+
+    .exclusive-container{
+        flex-direction: column-reverse;
+    }
+
+    .exclusive-container img{
+        margin-bottom: 4rem;
+    }
+}
+
+/* Main Content */
+
+/* Coments */
+.coments{
+    display: flex;
+    padding: 4rem 1rem;
+    justify-content: space-evenly;
+}
+
+.coment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 30%;
+    text-align: center;
+    box-shadow: 0 0 15px #afafaf;
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.coment:hover{
+    transform: translateY(-5px);
+}
+
+.coment {
+    margin: 5px 0;
+}
+
+.coment p:first-child{
+    font-weight: bold;
+    font-size: 5rem;
+    color: rgb(151, 42, 240);
+    margin-top: 3rem;
+    line-height: 2rem;
+}
+
+.coment p:last-child{
+    font-weight: bold;
+}
+
+/* Media queries */
+
+@media (max-width:800px) {
+    .coments{
+        flex-direction: column;
+    }
+
+    .coment{
+        margin-bottom: 1.2rem;
+    }
+}
+/* Coments */
+
+/* Footer */
+.footer-content{
+    display: flex;
+    align-items: center;
+    color: #8f8f8f;
+    padding: 4rem 1rem;
+    gap: 2rem;
+}
+
+.download-options>*{
+    margin: 1rem 0;
+}
+
+.download-options>p:first-child{
+    margin: 1rem 0;
+    color: #fff;
+}
+
+.download-options>div{
+    display: flex;
+}
+
+.download-options>div img{
+    width: 180px;
+}
+
+.logo-footer {
+    text-align: center;
+}
+
+.links-footer h3{
+    color: #fff;
+    margin-bottom: 0.8rem;
+}
+
+.links-footer ul{
+    list-style: none;
+}
+
+.links-footer ul li a{
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+}
+
+.copyright {
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Media queries */
+@media (max-width: 800px){
+    .footer-content{
+        display: inline;
+        font-size: 0.8rem;
+    }
+
+    .footer-content>div{
+        padding: 1rem;
+    }
+
+    .download-options>div{
+        display: inline;
+    }
+
+    .download-options>div img{
+        width: 120px;
+    }
+
+    .copyright{
+        font-size: 0.8rem;
+    }
+}
+/* Footer */
+
+    .slider {
+        width: 80%; /* Reduzindo o tamanho do slider */
+        max-width: 800px; /* Definindo um tamanho máximo */
+        margin: 2rem auto;
+        position: relative;
+        overflow: hidden;
+        border: 4px solid #8A2BE2;
+        border-radius: 20px;
+    }
+    
+    .slider .list {
+        position: relative;
+        width: 300%; /* Definindo a largura do slider */
+        height: auto;
+        display: flex;
+        transition: 1s;
+    }
+    
+    .slider .item {
+        flex: 0 0 33.33%; /* Garantindo que cada item ocupe 1/3 do slider */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .slider .list img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto; /* Ajustando a largura da imagem para que seja proporcional ao slider */
+        height: auto; /* Ajustando a altura da imagem para que seja proporcional ao slider */
+        object-fit: contain;
+        border-radius: 18px;
+    }
+    
+    
+    .slider .buttons {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    
+    .slider .buttons button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: rgba(138, 43, 226, 0.5);
+        color: #fff;
+        border: none;
+        font-family: monospace;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .slider #prev {
+        left: 20px;
+    }
+    
+    .slider #next {
+        right: 20px;
+    }
+    
+    .slider .dots {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        z-index: 10;
+    }
+    
+    .slider .dots li {
+        list-style: none;
+        width: 10px;
+        height: 10px;
+        background-color: #8A2BE2;
+        margin: 10px;
+        border-radius: 20px;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    
+    .slider .dots li.active {
+        width: 30px;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .slider {
+            height: auto; /* Alteração aqui */
+        }
+    
+        .slider .list {
+            width: 300%; /* Alteração aqui */
+            height: auto; /* Alteração aqui */
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="#inicio">
+        <div class="navbar" >
+            <div class="header-inner-content">
+                <h1 class="logo"><a href="#inicio">LUID<span>STORE</span></a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="PáginaSobre.html">Sobre</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-icon-container">
+                    <img src="./images/images/cart.png">
+                    <img src="./images/images/menu.png" class="menu-button" id="menu-button">
+                </div>
+            </div>
+        </div>
+        <header>
+            <div class="header-inner-content">
+                <div class="header-bottom-side">
+                    <div class="header-bottom-side-left">
+                        <h2>Proporcione desempenho e qualidade para sua vida!</h2>
+                        <p>Desperte sua paixão pela tecnologia! Encontre os equipamentos mais avançados e mergulhe em uma experiência única de inovação. Sua jornada tecnológica começa aqui, onde cada clique é um passo para o futuro que você deseja conquistar.</p>
+                        <!-- Primeira Página de produto -->
+                        <a href="Produto-1.html"><button>Ver Agora &#8594;</button></a>
+                    </div>
+                    <div class="header-bottom-side-right">
+                        <img src="./images/images/gaming-msi-header.png">
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Slider -->
+        <div class="slider">
+            <div class="list">
+                <!-- Segunda,Terceira e Quarta Páginas de produto -->
+                <div class="item">
+                    <a href="Produto-2.html"><img src="./img/imagem1.png"></a>
+                </div>
+                <div class="item">
+                    <a href="Produto-3.html"><img src="./img/imagem2.png"></a>
+                </div>
+                <div class="item">
+                    <a href="Produto-4.html"><img src="./img/imagem4.webp"></a>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="prev">&lt;</button>
+                <button id="next">&gt;</button>
+            </div>
+            <ul class="dots">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <!-- Fim do Slider -->
+        <!-- Main content -->
+        <main>
+            <div class="gray-background">
+                <div class="page-inner-content">
+                    <div class="cols cols-3">
+                        <!-- Quinta, Sexta e Sétima Páginas de produto -->
+                        <a href="Produto-5.html"><img class="img-cols" src="./images/images/products/produto1.jpg"></a>
+                        <a href="Produto-6.html"><img class="img-cols" src="./images/images/products/product-2.png"></a>
+                        <a href="Produto-7.html"><img class="img-cols" src="./images/images/products/product-3.png"></a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <!-- Restante dps produtos Página de produto -->
+                <div class="page-inner-content">
+                    <h3 class="section-title">Produtos Selecionados</h3>
+                    <div class="subtitle-underline"></div>
+                    <div class="cols cols-4">
+                        <div class="product">
+                            <a href="Produto-8.html"><img src="./images/images/products/product-4.png"></a>
+                            <P class="product-name">Combo Gamer Meetion</P>
+                            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                            <p class="product-price">300,00 <span>BRL</span></p>
+                        </div>
+                        <div class="product">
+                            <a href="Produto-9.html"><img src="./images/images/products/product-5.png"></a> 
+                            <P class="product-name">Msi GeForce Gtx 1650</P>
+                            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                            <p class="product-price">900,00 <span>BRL</span></p>
+                        </div>
+                        <div class="product">
+                            <a href="Produto-10.html"><img src="./images/images/products/product-6.png"></a>
+                            <P class="product-name">Dualsense PS5</P>
+                            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                            <p class="product-price">400,00 <span>BRL</span></p>
+                        </div>
+                        <div class="product">
+                            <a href="Produto-11.html"><img src="./images/images/products/product-7.png"></a>
+                            <P class="product-name">Cadeira Gamer Prizi</P>
+                            <p class="rate">&#9733;&#9733;&#9733;&#9734;&#9734;</p>
+                            <p class="product-price">400,00 <span>BRL</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-inner-content">
+                    <h3 class="section-title">Últimos Produtos</h3>
+                    <div class="subtitle-underline"></div>
+                    <div class="cols cols-4">
+                        <div class="product">
+                            <a href="Produto-12.html"><img src="./images/images/products/product-8.png"></a>
+                            <P class="product-name">Iphone 14 Pro Max 512GB</P>
+                            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                            <p class="product-price">6.500,00 <span>BRL</span></p>
+                        </div>
+                        <div class="product">
+                            <a href="Produto-13.html"><img src="./images/images/products/product-9.png"></a>
+                            <P class="product-name">Samsung Galaxy S23 Ultra 1TB</P>
+                            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                            <p class="product-price">10.000,00 <span>BRL</span></p>
+                        </div>
+                        <div class="product">
+                            <a href="Produto-14.html"><img src="./images/images/products/product-10.png"></a>
+                            <P class="product-name">Asus Rog Phone 3 Gamer</P>
+                            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                            <p class="product-price">5.850,00 <span>BRL</span></p>
+                        </div>
+                        <div class="product">
+                            <a href="Produto-15.html"><img src="./jpg/produto15.png"></a>
+                            <P class="product-name">Xiaomi 13 Ultra</P>
+                            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                            <p class="product-price">5.275,00 <span>BRL</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gray-background">
+                <div class="header-inner-content">
+                    <div class="header-bottom-side exclusive-container">
+                        <div class="header-bottom-side-left">
+                            <h2>Smart Band 4</h2>
+                            <p>
+                                O Mi Smart Band 4 é uma pulseira inteligente com display colorido, monitoramento de atividades físicas, notificações, bateria de longa duração e resistência à água. Personalize e acompanhe seu estilo de vida ativo.
+                            </p>
+                            <a href="Produto-16.html"><button>Ver Agora &#8594;</button></a>
+                        </div>
+                        <div class="header-bottom-side-right">
+                            <img src="./images/images/exclusive.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div>
+                <div class="page-inner-content">
+                    <div class="coments">
+                        <div class="coment">
+                            <p>"</p>
+                            <p>A experiência de compra neste site foi incrível! A navegação foi suave e intuitiva, e encontrei facilmente o que procurava. Além disso, o design limpo e agradável do site contribuíram para uma experiência agradável. Definitivamente voltarei para futuras compras.</p>
+                            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                            <p>Ana Silva</p>
+                        </div>
+                        <div class="coment">
+                            <p>"</p>
+                            <p>Embora eu tenha encontrado os produtos que estava procurando, a finalização da compra foi um pouco complicada. O processo de checkout parecia um tanto confuso, e tive dificuldades para inserir minhas informações de pagamento. Seria útil simplificar essa etapa para facilitar a conclusão das compras.</p>
+                            <p class="rate">&#9733;&#9733;&#9733;&#9734;&#9734;</p>
+                            <p>João Pereira</p>
+                        </div>
+                        <div class="coment">
+                            <p>"</p>
+                            <p>Fiquei impressionado com a variedade de produtos oferecidos neste site, mas infelizmente encontrei alguns links quebrados enquanto navegava. Isso dificultou um pouco a minha experiência, pois tive que voltar atrás e encontrar uma rota alternativa para continuar minha pesquisa. Seria ótimo se esses problemas pudessem ser corrigidos para garantir uma navegação sem interrupções.</p>
+                            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                            <p>Maria Santos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="gray-background">
+            <div class="page-inner-content footer-content">
+                <div class="download-options">
+                    <p>Baixe nosso aplicativo</p>
+                    <p>Baixe nosso aplicativo para Android e IOS</p>
+                    <div>
+                        <img src="./images/images/app-store.png" alt="">
+                        <img src="./images/images/play-store.png" alt="">
+                    </div>
+                </div>
+                <div class="logo-footer">
+                    <h1 class="logo"><a href="#inicio">LUID<span>STORE</span></a></h1>
+                    <p>
+                        Transforme desejos em realidade, encontre tudo o que precisa no nosso e-commerce!
+                    </p>
+                </div>
+                <div class="links-footer">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="">Cupons</a></li>
+                        <li><a href="">Blog Post</a></li>
+                        <li><a href="">Políticos</a></li>
+                        <li><a href="">Torne-se afiliado</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="page-inner-content">
+            <div class="page-inner-content copyright">
+                <p>Copyright 2024 - Luid Henrik - Todos os direitos Reservados</p>
+            </div>
+        </footer>
+    </section>
+    
+    
+    
+    <script>
+        const navbara = document.querySelector(".navbar");
+        const menuButton = document.querySelector(".menu-button");
+
+        menuButton.addEventListener('click', () => {
+            navbara.classList.toggle("show-menu");
+        });
+
+        const botaoInicio = document.querySelectorAll('a[href="#inicio"]');
+
+        function scrollParaInicio(event) {
+            event.preventDefault();
+            document.querySelector('section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        botaoInicio.forEach(botao => {
+            botao.addEventListener('click', scrollParaInicio);
+        });
+
+
+        /* Slider*/
+        let slider = document.querySelector('.slider .list');
+        let items = document.querySelectorAll('.slider .list .item');
+        let next = document.getElementById('next');
+        let prev = document.getElementById('prev');
+        let dots = document.querySelectorAll('.slider .dots li');
+
+        let lengthItems = items.length - 1;
+        let active = 0;
+        next.onclick = function(){
+            active = active + 1 <= lengthItems ? active + 1 : 0;
+            reloadSlider();
+        }
+        prev.onclick = function(){
+            active = active - 1 >= 0 ? active - 1 : lengthItems;
+            reloadSlider();
+        }
+        let refreshInterval = setInterval(()=> {next.click()}, 3000);
+        function reloadSlider(){
+            slider.style.left = -items[active].offsetLeft + 'px';
+
+            let lastActiveDot = document.querySelector('.slider .dots li.active');
+            lastActiveDot.classList.remove('active');
+            dots[active].classList.add('active');
+
+            clearInterval(refreshInterval);
+            refreshInterval = setInterval(()=> {next.click()}, 3000);
+        }
+
+        dots.forEach((li, key) => {
+            li.addEventListener('click', ()=>{
+                active = key;
+                reloadSlider();
+            })
+        })
+        window.onresize = function(event) {
+            reloadSlider();
+        };
+    </script>
+</body>
+</html>

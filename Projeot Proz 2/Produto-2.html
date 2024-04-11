@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de compra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400; 700&display=swap" rel="stylesheet">
+    <link href="./Home.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 85px;
+}
+
+.left-side-menu{
+    display: flex;
+    gap: 50px;
+}
+
+nav ul li{
+    display: inline-block;
+    margin-right: 30px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: hsl(219, 9%, 45%);
+}
+
+.right-side-menu{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-avatar img{
+    width: 40px;
+}
+
+.line{
+    height: 1px;
+    background-color: #ddd;
+    width: 90%;
+    align-self: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 85px);
+    gap: 100px;
+}
+
+.left-side{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.items{
+    margin-left: 150px;
+    align-items: flex-end;
+}
+
+.select-image{
+    max-width: 400px;
+}
+
+.select-image img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.thumbnails{
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 400px;
+    gap: 10px;
+}
+
+.thumbnail img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.right-side{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.right-side p{
+    color: hsl(219, 9%, 45%);
+    font-size: 14px;
+}
+
+.prices{
+    display: flex;
+    flex-direction: column;
+}
+
+.price{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.options{
+    display: flex;
+    gap: 20px;
+}
+
+.amount{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: hsl(223, 64%, 98%);
+    padding: 10px 20px;
+    width: fit-content;
+    border-radius: 10px;
+}
+
+.amount span{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.minus, .plus{
+    cursor: pointer;
+}
+
+.button{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: hsl(263, 100%, 55%);
+    padding: 10px 35px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.button img{
+    width: 14px;
+}
+
+/* Header */
+.header-inner-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.navbar {
+    background-color: #2c2c2c;
+    position: sticky;
+    top: 0;
+    box-shadow: 10px 0px 10px #2c2c2c;
+    z-index: 99;
+}
+
+.navbar > .header-inner-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo a{
+    margin-right: 3.5rem;
+    font-size: 2rem;
+    color: rgb(151, 42, 240);
+    text-decoration: none;
+}
+
+.logo span {
+    color: #fff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin-right: 6rem;
+}
+
+.nav-icon-container{
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon-container img {
+    width: 30px;
+    cursor: pointer;
+}
+
+.nav-icon-container img:first-child {
+    margin-right: 2rem;
+}
+
+nav ul li a{
+    color: #fff;
+    margin-right: 3rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+nav ul li:hover {
+    transform: translate(-5px);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar.show-menu nav {
+    display: flex;
+}
+
+.menu-button {
+    display: none;
+}
+
+header {
+    background-image: radial-gradient(#fff, #c7c7c7);
+}
+
+.header-bottom-side {
+    display: flex;
+    align-items: center;
+}
+
+.header-bottom-side-left {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.header-bottom-side-left h2 {
+    font-size: 3.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.header-bottom-side-left p {
+    line-height: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.header-bottom-side-left button {
+    background-color: rgb(120, 14, 207);
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem 3.8rem;
+    border-radius: 9999px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s;
+
+}
+
+.header-bottom-side-left button:hover {
+    background-color: rgb(77, 12, 131);
+
+}
+
+.header-bottom-side-right {
+    flex: 1;
+}
+
+.header-bottom-side-right img {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar" >
+            <div class="header-inner-content">
+                <h1 class="logo"><a href="#inicio">LUID<span>STORE</span></a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="PáginaSobre.html">Sobre</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-icon-container">
+                    <img src="./images/images/cart.png">
+                    <img src="./images/images/menu.png" class="menu-button" id="menu-button">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="#inicio">
+            <div class="container">
+                <div class="left-side">
+                    <div class="items">
+                        <div class="select-image">
+                            <img src="./img/imagem1.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="content">
+                        <h1>Notebook Gamer Acer Nitro 5</h1>
+                        <p>O Notebook Gamer Acer Nitro 5 é uma máquina poderosa, equipada com processadores Intel Core de 10ª ou 11ª geração, ou AMD Ryzen série 4000 ou 5000, combinados com placas de vídeo NVIDIA GeForce GTX ou RTX, ou AMD Radeon RX. Possui opções de memória RAM de até 32GB e armazenamento SSD de alta velocidade de até 1TB. Sua tela de 15,6 polegadas Full HD vem com taxas de atualização que variam de 60Hz a 144Hz, proporcionando uma experiência de jogo fluida. Possui um design robusto e agressivo, com teclado retroiluminado e sistema de resfriamento eficiente. O Nitro 5 oferece uma experiência de áudio imersiva, conectividade abrangente e é uma escolha popular para jogadores que procuram um notebook capaz de rodar jogos exigentes com desempenho sólido.</p>
+                        <div class="prices"><span class="price">R$5.000,00</span>
+                        </div>
+                        <div class="options">
+                            <div class="amount">
+                                <div class="minus">
+                                    <img src="./images2/images/icon-minus.png">
+                                </div>
+                                <span>0</span>
+                                <div class="plus">
+                                    <img src="./images2/images/icon-plus.png">
+                                </div>
+                            </div>
+                            <a href="" class="button"><img src="./images/images/cart.png">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.querySelector('.logo a').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = "Home.html";
+        });
+    </script>
+</body>
+</html>

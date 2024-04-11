@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sobre</title>
+    <style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #afafaf;
+    }
+    
+    .header span{
+        color: rgb(120, 14, 207);
+        box-shadow: none;
+    }
+    
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .header-backbutton {
+        margin-left: 15px;
+    }
+    
+    header h1 {
+        margin: 0;
+        text-align: center;
+        flex-grow: 1;
+        margin-right: 6rem;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    section {
+        margin-bottom: 20px;
+        padding-bottom: 70px;
+    }
+    
+    h2 {
+        color: #fff;
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+        border-radius: 12px;
+        padding: 10px 2px;
+        padding: 2vw;
+    }
+    
+    h2 span {
+        border-radius: 10px;
+        padding: 1vw;
+        background-color: #2b2b2b;
+    
+    }
+    
+    p {
+        text-align: center;
+        font-size: 18px;
+    }
+    
+    p span{
+        color: rgb(151, 42, 240);
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    
+    ul li{
+        padding: 0.5rem;
+        text-decoration: none;
+        text-align: center;
+        list-style-type: none;
+        font-weight: bold;
+        margin-right: 35px;
+    }
+    
+    footer {
+        background-color: #2b2b2b;
+        color: #8f8f8f;
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+        position: relative;
+        bottom: 0;
+        margin-top: 20px;
+    }
+    
+    #backButton{
+        font-family: sans-serif;
+        font-size: 1rem;
+        background-color: rgb(76, 9, 131);
+        color: rgb(179, 100, 243);
+        padding: 5px 10px;
+        border-radius: 1rem 0;
+        font-weight: bold;
+        cursor: pointer;
+        border: black 2px solid;
+    }
+    
+    #backButton:hover{
+        background-color: rgb(46, 3, 65);
+    }
+    
+    @media (max-width: 800px) {
+        main {
+            padding: 10px;
+        }
+    
+        h1 {
+            font-size: 1.5rem;
+        }
+    
+        section {
+            margin-bottom: 10px;
+        }
+    
+        footer {
+            position: relative;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <button class="header-backbutton" id="backButton">VOLTAR</button>
+        <h1>SOBRE <span>NÓS</span></h1>
+    </header>
+    <main>
+        <section>
+            <h2><span>QUEM NÓS SOMOS</span></h2>
+
+            <p>Bem-vindo ao LUID <span>STORE</span>, sua plataforma online de referência para todas as suas necessidades de compras. Aqui, nos esforçamos para oferecer a você uma experiência de compra única, conveniente e satisfatória.</p>
+        </section>
+        <section>
+            <h2><span>NOSSA MISSÃO</span></h2>
+            <p>Na LUID <span>STORE</span>, nossa missão é simples: tornar a sua experiência de compras online a melhor possível. Queremos proporcionar a você acesso a uma ampla variedade de produtos de qualidade, desde os essenciais do dia a dia até os itens mais exclusivos e especializados. Estamos empenhados em oferecer um serviço excepcional ao cliente, garantindo que cada interação com nossa plataforma seja fácil, segura e agradável.</p>
+        </section>
+        <section>
+            <h2><span>O QUE NOS DIFERENCIA</span></h2>
+            <p>O que nos diferencia na vasta paisagem do comércio eletrônico é o nosso compromisso com a qualidade, autenticidade e confiabilidade. Trabalhamos arduamente para estabelecer parcerias com marcas confiáveis e fornecedores respeitados, garantindo que cada produto que você encontrar em nosso site atenda aos mais altos padrões.
+            <br>
+            Além disso, estamos constantemente buscando inovação e aprimoramento em todas as áreas do nosso negócio. Desde a interface do usuário até os processos de entrega, estamos sempre procurando maneiras de tornar sua experiência conosco ainda mais satisfatória.
+            </p>
+        </section>
+        <section>
+            <h2><span>COMPROMISSO COM A COMUNIDADE</span></h2>
+            <p>Na LUID <span>STORE</span>, acreditamos na importância de retribuir à comunidade que nos apoia. Estamos empenhados em causas sociais e ambientais, e buscamos ativamente maneiras de fazer uma diferença positiva no mundo ao nosso redor. Desde práticas sustentáveis de negócios até iniciativas de responsabilidade social corporativa, estamos comprometidos em ser uma força para o bem.</p>
+        </section>
+        <section>
+            <h2><span>NOSSO TIME</span></h2>
+            <ul>
+                <li>Luid Henrik - CEO</li>
+                <li>Mario - CTO</li>
+                <li>Ednaldo Pereira - CFO</li>
+                <li>Luid Henrik - DEV</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; copyright 2024 - Luid Henrik - Todos os direitos Reservados</p>
+    </footer>
+
+    <script>
+
+        // botao de redirecionamento da página sobre
+        document.getElementById("backButton").addEventListener("click", function() {
+        window.history.back();
+        });
+
+        // fim do botao de redirecionamento da página sobre
+
+    </script>
+</body>
+</html>
